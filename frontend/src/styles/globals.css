@@ -1,3 +1,18 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+li {
+  list-style-type: none;
+}
+
+input {
+  outline: none;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 6px;
+}
+
 * {
   box-sizing: border-box;
 }
