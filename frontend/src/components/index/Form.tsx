@@ -1,10 +1,13 @@
 import Link from "next/link";
 import { CREATE_NEW_COUNTRY } from "@/graphql/CountryMutations";
 import { gql, useMutation } from "@apollo/client";
+import { GET_ALL_COUNTRIES } from "@/graphql/CountryQueries";
 import { useContext, useState } from "react";
 
 const Form = () => {
-    const [addCountry, { data }] = useMutation(CREATE_NEW_COUNTRY);
+    const [addCountry, { data }] = useMutation(CREATE_NEW_COUNTRY, {
+        refetchQueries: [{query: GET_ALL_COUNTRIES}],
+    });
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
 
